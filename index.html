@@ -5,11 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NameGen</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
   <h1>NameGen</h1>
-  <button onclick="create10Words()">Create 10 Words</button>
+  <input type="number" placeholder="Min length" id="minLen" value="4">
+  <input type="number" placeholder="Max length" id="maxLen" value="10">
+  <input type="text" placeholder="Starts With" id="startsWith">
+  <button id="create10words" onclick="create10Words()">Create 10 Words</button>
+  <button id="create10words" onclick="document.getElementById('content').innerHTML = ''">Clear Words</button>
   <div id="content"></div>
   <script src="./index.js"></script>
 </body>
