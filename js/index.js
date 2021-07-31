@@ -33,20 +33,25 @@ function wordCreator(length, startsWith) {
   return result;
 }
 
-function create10Words(maxLength, minLength, startsWith) {
+function create5Words(maxLength, minLength, startsWith) {
   maxLength = parseInt(document.getElementById('maxLen').value) || 10;
   minLength = parseInt(document.getElementById('minLen').value) || 4;
   startsWith = document.getElementById('startsWith').value;
   if (maxLength < minLength) minLength = document.getElementById('minLen').value = maxLength;
   const words = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 5; i++) {
     length = Math.floor(Math.random() * (maxLength + 1 - minLength)) + minLength;
     words.push(wordCreator(length, startsWith));
   }
-  document.getElementById('content').innerHTML += words.join('<br />') + '<br />';
+  document.getElementById('content').innerHTML += words.join();
 }
 
+//küçük bir fonksiyon :)
+function regenarete(){
+  create5Words();
+  document.getElementById('content').innerHTML = '';
+}
 // click on button if enter key is pressed
 window.addEventListener('keydown', function(e) {
-  if (e.key == "Enter") document.getElementById('create10words').click();
+  if (e.key == "Enter") document.getElementById('create5words').click();
 });

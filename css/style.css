@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+html,body{
+    width: 100%;
+    height: 100%;
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'Poppins', sans-serif; 
+}
+
+.backdrop{
+    backdrop-filter: blur(150px);
+}
