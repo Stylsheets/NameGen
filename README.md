@@ -1,4 +1,3 @@
-<img src="./img/Thumbnail.png">
 # name-generator
 This is a very simple project that creates words randomly. Which can be useful for not wasting time with finding a name for a new project.
 
@@ -7,3 +6,5 @@ The algorithm is very simple. It takes max, min length and starts with (optional
 <br />
 
 In the future, we will try to make the algorithm better. We will make an API, an npm module and make it more user friendly.
+
+<img src="./img/Thumbnail.png">
