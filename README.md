@@ -1,3 +1,4 @@
+<img src="./img/Thumbnail.png">
 # name-generator
 This is a very simple project that creates words randomly. Which can be useful for not wasting time with finding a name for a new project.
 
