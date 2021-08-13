@@ -37,7 +37,7 @@
     <!--link-->
     <link rel="stylesheet" href="./css/tailwind.css">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
     <script src="./js/index.js"></script>
 </head>
 <body x-data="{tab: 'tab1'}">
@@ -92,7 +92,7 @@
                     </div>
                     <div class="flex gap-5 transform translate-x-5" x-show="tab == 'tab3'" x-transition:enter="ease-inout-quart duration-300" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-inout-quart duration-200" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" style="display: none;">
                         <input type="text" placeholder="Starts Width" id="startsWith" class="w-96 text-sm max-w-lg focus:outline-none rounded-md font-normal px-4 h-10" style="box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.04); letter-spacing: -0.035em;">
-                        <button @click="tab = 'list'" onclick="create10Words()" type="button" class="w-10 h-10 rounded-full inline-flex justify-center items-center hover:opacity-50 transition text-white" style="box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.04); background: #99fed7;">
+                        <button @click="tab = 'list'" onclick="regenarete()" type="button" class="w-10 h-10 rounded-full inline-flex justify-center items-center hover:opacity-50 transition text-white" style="box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.04); background: #99fed7;">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
                             </svg>                  
@@ -100,53 +100,16 @@
                     </div>
                 </div>
                 <div class="w-full max-w-sm h-64" x-show="tab == 'list'" :class="tab == 'list' ? 'h-64' : 'h-0'" x-transition:enter="ease-inout-quart duration-300" x-transition:enter-start="opacity-0 scale-95 absolute" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-inout-quart duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95 absolute" style="display: none;">
-                    <ul id="content" class="space-y-3 w-full " >
-                        <li class="transition ease-inout-quart duration-500 transform scale-100 hover:scale-110 group w-full max-w-sm bg-white overflow-hidden flex items-center justify-between rounded-md px-6 py-3" style="box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.04);">
-                            <span class="transition ease-inout-quart text-gray-500 group-hover:text-gray-800">NameOne</span>
+                    <ul id="content" class="space-y-3 w-full">
+                        <li class="transition ease-inout-quart duration-500 transform scale-100 hover:scale-110 group w-full max-w-sm bg-white overflow-hidden flex items-center justify-between rounded-md px-6 py-3" style="box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.04); display:none;">
+                            <span class="transition ease-inout-quart text-gray-500 group-hover:text-gray-800">Name Generator</span>
                             <button class="transition opacity-0 group-hover:opacity-100 text-gray-300 hover:text-gray-800">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                                 <path d="M9 2a2 2 0 00-2 2v8a2 2 0 002 2h6a2 2 0 002-2V6.414A2 2 0 0016.414 5L14 2.586A2 2 0 0012.586 2H9z" />
                                 <path d="M3 8a2 2 0 012-2v10h8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
                                 </svg>
                             </button>
-                            </li>
-                            <li class="transition ease-inout-quart duration-500 transform scale-100 hover:scale-110 group w-full max-w-sm bg-white overflow-hidden flex items-center justify-between rounded-md px-6 py-3" style="box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.04);">
-                            <span class="transition ease-inout-quart text-gray-500 group-hover:text-gray-800">NameOne</span>
-                            <button class="transition opacity-0 group-hover:opacity-100 text-gray-300 hover:text-gray-800">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9 2a2 2 0 00-2 2v8a2 2 0 002 2h6a2 2 0 002-2V6.414A2 2 0 0016.414 5L14 2.586A2 2 0 0012.586 2H9z" />
-                                <path d="M3 8a2 2 0 012-2v10h8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
-                                </svg>
-                            </button>
-                            </li>
-                            <li class="transition ease-inout-quart duration-500 transform scale-100 hover:scale-110 group w-full max-w-sm bg-white overflow-hidden flex items-center justify-between rounded-md px-6 py-3" style="box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.04);">
-                            <span class="transition ease-inout-quart text-gray-500 group-hover:text-gray-800">NameOne</span>
-                            <button class="transition opacity-0 group-hover:opacity-100 text-gray-300 hover:text-gray-800">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9 2a2 2 0 00-2 2v8a2 2 0 002 2h6a2 2 0 002-2V6.414A2 2 0 0016.414 5L14 2.586A2 2 0 0012.586 2H9z" />
-                                <path d="M3 8a2 2 0 012-2v10h8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
-                                </svg>
-                            </button>
-                            </li>
-                            <li class="transition ease-inout-quart duration-500 transform scale-100 hover:scale-110 group w-full max-w-sm bg-white overflow-hidden flex items-center justify-between rounded-md px-6 py-3" style="box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.04);">
-                            <span class="transition ease-inout-quart text-gray-500 group-hover:text-gray-800">NameOne</span>
-                            <button class="transition opacity-0 group-hover:opacity-100 text-gray-300 hover:text-gray-800">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9 2a2 2 0 00-2 2v8a2 2 0 002 2h6a2 2 0 002-2V6.414A2 2 0 0016.414 5L14 2.586A2 2 0 0012.586 2H9z" />
-                                <path d="M3 8a2 2 0 012-2v10h8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
-                                </svg>
-                            </button>
-                            </li>
-                            <li class="transition ease-inout-quart duration-500 transform scale-100 hover:scale-110 group w-full max-w-sm bg-white overflow-hidden flex items-center justify-between rounded-md px-6 py-3" style="box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.04);">
-                            <span class="transition ease-inout-quart text-gray-500 group-hover:text-gray-800">NameOne</span>
-                            <button class="transition opacity-0 group-hover:opacity-100 text-gray-300 hover:text-gray-800">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9 2a2 2 0 00-2 2v8a2 2 0 002 2h6a2 2 0 002-2V6.414A2 2 0 0016.414 5L14 2.586A2 2 0 0012.586 2H9z" />
-                                <path d="M3 8a2 2 0 012-2v10h8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
-                                </svg>
-                            </button>
-                            </li>
-
+                        </li>
                     </ul>                    
                     <div class="w-full flex space-x-4 justify-center pt-5">
                             <button @click="tab = 'tab1'" class="transition h-10 w-10 rounded-full inline-flex justify-center items-center hover:opacity-50 text-white" style="background: #fe9999;">
