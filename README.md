@@ -6,3 +6,5 @@ The algorithm is very simple. It takes max, min length and starts with (optional
 <br />
 
 In the future, we will try to make the algorithm better. We will make an API, an npm module and make it more user friendly.
+
+<img src="./img/Thumbnail.png">
