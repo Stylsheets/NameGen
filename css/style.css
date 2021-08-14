@@ -11,3 +11,8 @@ html,body{
 .backdrop{
     backdrop-filter: blur(150px);
 }
+
+.backdrop-firefox{
+    background: linear-gradient(277.55deg, #256FFF -399.16%, #FFFFFF 102.32%);
+    position: relative;
+}
