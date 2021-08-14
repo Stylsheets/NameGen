@@ -1,6 +1,13 @@
 const consonants = "bcdfghjklmnpqrstvwxz";
 const vowels = "aeiouy";
 
+function data() {
+  return {
+    tab: 'tab1',
+    copyalert: false,
+  };
+}
+
 function randomLetter() {
   return String.fromCharCode(65 + Math.floor(Math.random() * 26));
 }
@@ -83,6 +90,23 @@ function copyName(e) {
   cp.select();
   document.execCommand("copy");
   document.body.removeChild(cp);
+
+  // alert
+  document.getElementById('name').innerHTML = text;
+  document.body.__x.$data.copyalert = false;
+  document.getElementById("progress").classList.remove('progress');
+  void document.getElementById("progress").offsetWidth;
+  document.getElementById("progress").classList.add('progress');
+  document.body.__x.$data.copyalert = true;
+  
+  const eventID = Math.random().toString(36).substring(7);
+  document.body.setAttribute('data-event-id', eventID);
+  setTimeout(() => {
+    if (document.body.getAttribute('data-event-id') === eventID) {
+      document.body.removeAttribute('data-event-id');
+      document.body.__x.$data.copyalert = false
+    };
+  }, 2000);
 }
 
 // click on button if enter key is pressed
@@ -95,4 +119,3 @@ if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
   document.getElementById('back').classList.add('backdrop-firefox');
   document.getElementById('back').classList.remove('backdrop');
 }
-

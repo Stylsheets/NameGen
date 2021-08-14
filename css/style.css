@@ -16,3 +16,13 @@ html,body{
     background: linear-gradient(277.55deg, #256FFF -399.16%, #FFFFFF 102.32%);
     position: relative;
 }
+
+.progress{
+    animation: progress 2s cubic-bezier(0.65, 0, 0.35, 1);
+    height:2.5px;
+}
+
+@keyframes progress {
+    from {width: 0px;}
+    to {width: 100%;}
+}

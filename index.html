@@ -39,11 +39,11 @@
     <!--link-->
     <link rel="stylesheet" href="./css/tailwind.css">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://unpkg.com/alpinejs" defer></script>
     <script defer src="./js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
 </head>
 
-<body x-data="{tab: 'tab1'}">
+<body x-data="data()">
     <div class="h-full w-full overflow-hidden fixed">
         <div class="w-56 h-56 absolute top-24 left-48 bg-blue-400 rounded-full"></div>
         <div class="w-36 h-36 absolute bottom-52 left-64 bg-blue-700 rounded-full"></div>
@@ -52,6 +52,32 @@
         <div class="w-48 h-48 absolute bottom-1/2 right-1/2 bg-blue-300 rounded-full"></div>
     </div>
     <div id="back" class="backdrop w-full h-full z-10">
+
+        <div aria-live="assertive" x-show="copyalert" class="fixed inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start" style="display: none;">
+            <div class="w-full flex flex-col items-center space-y-4 sm:items-end">
+              <div x-show="copyalert" x-transition:enter="transform ease-out duration-300 transition" x-transition:enter-start="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2" x-transition:enter-end="translate-y-0 opacity-100 sm:translate-x-0" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="relative max-w-sm w-full bg-white shadow-lg rounded-b-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden">
+                <div id="progress" class="progress absolute w-full top-0 bg-green-400"></div>
+                <div class="p-4">
+                  <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                      <!-- Heroicon name: outline/check-circle -->
+                      <svg class="h-6 w-6 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div class="ml-3 w-0 flex-1 pt-0.5">
+                      <p class="text-sm font-medium text-gray-900">
+                        Successfully Copy!
+                      </p>
+                      <p class="mt-1 text-sm text-gray-500">
+                        Selected <span class="font-medium text-gray-800" id="name">NameOne</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
         <div class="h-1/6 w-full flex justify-center items-center">
             <a href="https://github.com/unitythemaker/name-generator/" target="_blank">
                 <svg class="h-8" viewBox="0 0 132 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -202,14 +228,14 @@
 
         </div>
         <div class="h-1/6 w-full flex items-end justify-between py-5">
-            <div class="w-36"></div>
+            <div class="w-56 h-12"></div>
             <div class="w-full text-gray-300 flex justify-center">Powered By <a target="_blank"
                     href="https://github.com/unitythemaker"
                     class="mx-1 text-black hover:text-gray-700">UnityTheMaker</a> & <a target="_blank"
                     href="https://github.com/0fatihyildiz" class="mx-1 text-black hover:text-gray-700">0fatihyildiz</a>
             </div>
-            <div class="w-36 text-gray-400 hover:text-gray-800">
-                <a href="#">API DOCS</a>
+            <div class="w-56 text-gray-400">
+                <a href="#" class="whitespace-no-wrap cursor-not-allowed">API DOCS <span class="text-gray-800 font-medium">SOON</span></a>
             </div>
         </div>
     </div>
