@@ -1,5 +1,8 @@
 module.exports = {
-  purge: [],
+  purge: {
+    enabled: true,
+    content: ['./*.html'],
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -9,7 +12,10 @@ module.exports = {
     }
   },
   variants: {
-    extend: {},
+    extend: {
+      textColor: ['active'],
+      opacity: ['active'],
+    },
   },
   plugins: [],
 }

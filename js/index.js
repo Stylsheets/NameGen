@@ -54,13 +54,13 @@ function create5Words(maxLength, minLength, startsWith) {
     const li = document.createElement('li');
     const span = document.createElement('span');
     const button = document.createElement('button');
-    li.className = 'transition ease-inout-quart duration-500 transform scale-100 hover:scale-110 group w-full max-w-sm bg-white overflow-hidden flex items-center justify-between rounded-md px-6 py-3';
+    li.className = 'transition ease-inout-quart duration-500 transform scale-100 sm:hover:scale-110 group w-full max-w-sm bg-white overflow-hidden flex items-center justify-between rounded-md px-6 py-3';
     li.setAttribute('style', 'box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.04);');
-    span.className = 'transition ease-inout-quart text-gray-500 group-hover:text-gray-800';
+    span.className = 'transition ease-inout-quart text-gray-500 group-hover:text-gray-800 capitalize';
 
     span.innerHTML = words[i];
     li.appendChild(span);
-    button.className = 'transition opacity-0 group-hover:opacity-100 text-gray-300 hover:text-gray-800';
+    button.className = 'transition sm:opacity-0 sgroup-hover:opacity-100 text-gray-300 active:text-gray-800 sm:hover:text-gray-800';
     button.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
       <path d="M9 2a2 2 0 00-2 2v8a2 2 0 002 2h6a2 2 0 002-2V6.414A2 2 0 0016.414 5L14 2.586A2 2 0 0012.586 2H9z" />
       <path d="M3 8a2 2 0 012-2v10h8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
