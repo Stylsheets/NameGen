@@ -15,6 +15,22 @@ html,body{
     font-family: 'Poppins', sans-serif; 
 }
 
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #ffffff00; 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.165); 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.22); 
+  }
+
 .backdrop{
     backdrop-filter: blur(150px);
 }
